@@ -1,0 +1,107 @@
+:root {
+  --bg: #0e1116;
+  --panel: #161b22;
+  --accent: #d64045;
+  --accent-2: #4bc0c8;
+  --text: #e6edf3;
+  --muted: #9da4ad;
+  --border: #252b36;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(75, 192, 200, 0.12), transparent 25%), radial-gradient(circle at 80% 0%, rgba(214, 64, 69, 0.14), transparent 30%), var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0;
+}
+
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { color: var(--accent); }
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 18px 64px;
+}
+
+.hero {
+  background: linear-gradient(135deg, rgba(214, 64, 69, 0.18), rgba(75, 192, 200, 0.18));
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero h1 { margin: 0 0 6px; font-size: 32px; }
+.hero p { margin: 0; color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin: 18px 0 24px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+}
+
+details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #0f131a;
+  margin: 10px 0;
+  padding: 12px 14px;
+  box-shadow: var(--shadow);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent-2);
+  outline: none;
+}
+
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "▸";
+  float: right;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::after { transform: rotate(90deg); }
+
+ul { margin: 8px 0 0 18px; padding: 0; }
+li + li { margin-top: 4px; }
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  margin-left: 6px;
+}
